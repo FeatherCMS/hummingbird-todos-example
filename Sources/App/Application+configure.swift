@@ -1,14 +1,14 @@
 import Hummingbird
 import HummingbirdFoundation
-import HummingbirdPostgreSQL
-import HummingbirdSQLite
+import HummingbirdPostgresDatabase
+import HummingbirdSQLiteDatabase
 
 public protocol AppArguments {}
 
 extension HBApplication {
     
     func configure(_ args: AppArguments) async throws {
-//        services.setUpPostgreSQLDatabase(
+//        services.setUpPostgresDatabase(
 //            configuration: .init(
 //                host: "localhost",
 //                port: 5432,

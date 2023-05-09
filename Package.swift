@@ -7,9 +7,9 @@ let package = Package(
         .macOS(.v12),
     ],
     dependencies: [
-        .package(url: "https://github.com/hummingbird-project/hummingbird", from: "1.0.0"),
+        .package(url: "https://github.com/apple/swift-argument-parser", from: "1.2.0"),
+        .package(url: "https://github.com/hummingbird-project/hummingbird", from: "1.5.0"),
         .package(url: "https://github.com/feathercms/hummingbird-db", branch: "main"),
-        .package(url: "https://github.com/apple/swift-argument-parser", from: "1.0.0"),
     ],
     targets: [
         .executableTarget(
@@ -19,8 +19,8 @@ let package = Package(
                 .product(name: "Hummingbird", package: "hummingbird"),
                 .product(name: "HummingbirdFoundation", package: "hummingbird"),
                 .product(name: "HummingbirdDatabase", package: "hummingbird-db"),
-                .product(name: "HummingbirdPostgreSQL", package: "hummingbird-db"),
-                .product(name: "HummingbirdSQLite", package: "hummingbird-db"),
+                .product(name: "HummingbirdPostgresDatabase", package: "hummingbird-db"),
+                .product(name: "HummingbirdSQLiteDatabase", package: "hummingbird-db"),
             ],
             swiftSettings: [
                 .unsafeFlags(["-cross-module-optimization"], .when(configuration: .release)),
