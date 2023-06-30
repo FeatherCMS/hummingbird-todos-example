@@ -21,9 +21,8 @@ extension HBApplication {
 //            logger: logger
 //        )
         
-        let path = "./hb-todos.sqlite"
         services.setUpSQLiteDatabase(
-            path: path,
+            storage: .file(path: "./hb-todos.sqlite"),
             threadPool: threadPool,
             eventLoopGroup: eventLoopGroup,
             logger: logger
@@ -42,7 +41,6 @@ extension HBApplication {
                 """
             )
         )
-        
 
         // set encoder and decoder
         encoder = JSONEncoder()
